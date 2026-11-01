@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@color/retro_hijau">
+
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:background="@drawable/bg_card_pink"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="🍩 ☕ 🍞"
-            android:textSize="48sp" />
+            android:src="@drawable/kopi1"
+            android:scaleType="centerCrop"
+            android:layout_margin="12dp" />
+
+
+
     </FrameLayout>
 
     <TextView
@@ -36,25 +42,26 @@
         android:layout_marginTop="8dp"
         android:text="Join as a member &amp; experience more fun from various meal at mesen_gube marketing app"
         android:textColor="@color/black"
-        android:textSize="15sp" />
+        android:textStyle="bold"
+        android:textSize="16sp" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btnRegister"
         style="@style/RetroButton"
         android:background="@drawable/bg_btn_biru"
         android:text="Register"
         android:textColor="@color/white" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btnLogin"
         style="@style/RetroButton"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/bg_btn_putih"
+        android:background="@drawable/bg_btn_cream"
         android:text="Login" />
 </LinearLayout>
