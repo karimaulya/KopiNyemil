@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_box_biru"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:text="🛵 Pengiriman"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOrderTitle"
+            style="@style/RetroTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Alamat" />
+
+        <TextView
+            style="@style/RetroLabel"
+            android:layout_marginTop="32dp"
+            android:text="Nama Lengkap" />
+
+        <EditText
+            android:id="@+id/etOrderName"
+            style="@style/RetroInput"
+            android:hint="Nama Lengkap"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <TextView
+            style="@style/RetroLabel"
+            android:text="Alamat" />
+
+        <EditText
+            android:id="@+id/etOrderAddress"
+            style="@style/RetroInput"
+            android:gravity="top|start"
+            android:hint="Alamat"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textPostalAddress"
+            android:minLines="3" />
+
+        <TextView
+            style="@style/RetroLabel"
+            android:text="Patokan" />
+
+        <EditText
+            android:id="@+id/etOrderDetail"
+            style="@style/RetroInput"
+            android:gravity="top|start"
+            android:hint="Patokan atau detail lengkap"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOrder"
+            style="@style/RetroButton"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_btn_merah"
+            android:text="Order dan Kirim"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

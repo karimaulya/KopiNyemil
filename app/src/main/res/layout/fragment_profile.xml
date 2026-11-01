@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvProfileGreeting"
+            style="@style/RetroTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Halo Nama," />
+
+        <TextView
+            android:id="@+id/tvProfileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_box_pink"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:text="Profile Saya"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Avatar retro -->
+        <TextView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_oval_kuning"
+            android:gravity="center"
+            android:text="😎"
+            android:textSize="44sp" />
+
+        <TextView
+            android:id="@+id/tvProfileSetting"
+            style="@style/RetroLabel"
+            android:layout_marginTop="24dp"
+            android:text="Profile Setting" />
+
+        <EditText
+            android:id="@+id/etProfileName"
+            style="@style/RetroInput"
+            android:hint="nama"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveProfile"
+            style="@style/RetroButton"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_btn_hijau"
+            android:text="Save"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogout"
+            style="@style/RetroButton"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_btn_putih"
+            android:text="Logout" />
+    </LinearLayout>
+</ScrollView>

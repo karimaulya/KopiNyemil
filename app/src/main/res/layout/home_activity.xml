@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Navigation (pakai Button, isi fragment diganti lewat HomeActivity) -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_nav"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="6dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNavHome"
+            style="@style/RetroNavButton"
+            android:text="Home" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNavOrder"
+            style="@style/RetroNavButton"
+            android:text="Order" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNavProfile"
+            style="@style/RetroNavButton"
+            android:text="Profile" />
+    </LinearLayout>
+</LinearLayout>
