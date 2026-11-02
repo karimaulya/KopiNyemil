@@ -15,21 +15,32 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
 
         val session = SessionManager(requireContext())
-        val tvGreeting = view.findViewById<TextView>(R.id.tvProfileGreeting)
+        val tvUsernameBadge = view.findViewById<TextView>(R.id.tvProfileUsername)
         val etName = view.findViewById<EditText>(R.id.etProfileName)
+        val etUsername = view.findViewById<EditText>(R.id.etProfileUsername)
 
-        tvGreeting.text = "Halo ${session.displayName()},"
+        tvUsernameBadge.text = session.username.ifBlank { "user" }
         etName.setText(session.fullName)
+        etUsername.setText(session.username)
 
         view.findViewById<Button>(R.id.btnSaveProfile).setOnClickListener {
             val newName = etName.text.toString().trim()
-            if (newName.isEmpty()) {
-                Toast.makeText(requireContext(), "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            val newUsername = etUsername.text.toString().trim()
+
+            when {
+                newName.isEmpty() -> {
+                    Toast.makeText(requireContext(), "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                }
+                newUsername.isEmpty() -> {
+                    Toast.makeText(requireContext(), "Username tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    session.fullName = newName
+                    session.username = newUsername
+                    tvUsernameBadge.text = newUsername
+                    Toast.makeText(requireContext(), "Profile berhasil disimpan", Toast.LENGTH_SHORT).show()
+                }
             }
-            session.fullName = newName
-            tvGreeting.text = "Halo ${session.displayName()},"
-            Toast.makeText(requireContext(), "Profile disimpan", Toast.LENGTH_SHORT).show()
         }
 
         view.findViewById<Button>(R.id.btnLogout).setOnClickListener {

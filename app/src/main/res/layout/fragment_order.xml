@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/retro_pink">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,19 +11,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <TextView
-            android:id="@+id/tvChip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_box_biru"
-            android:paddingStart="14dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="4dp"
-            android:text="🛵 Pengiriman"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvOrderTitle"
@@ -30,42 +18,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Alamat" />
+            android:text="Where to?" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Write down your exact address so our delivery rider won't get lost bringing your coffee."
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
         <TextView
             style="@style/RetroLabel"
             android:layout_marginTop="32dp"
-            android:text="Nama Lengkap" />
+            android:text="Full Name" />
 
         <EditText
             android:id="@+id/etOrderName"
             style="@style/RetroInput"
-            android:hint="Nama Lengkap"
+            android:hint="Receiver's Name"
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
         <TextView
             style="@style/RetroLabel"
-            android:text="Alamat" />
+            android:text="Address" />
 
         <EditText
             android:id="@+id/etOrderAddress"
             style="@style/RetroInput"
             android:gravity="top|start"
-            android:hint="Alamat"
+            android:hint="Full Address (Street, House No.)"
             android:importantForAutofill="no"
             android:inputType="textMultiLine|textPostalAddress"
             android:minLines="3" />
 
         <TextView
             style="@style/RetroLabel"
-            android:text="Patokan" />
+            android:text="Landmark" />
 
         <EditText
             android:id="@+id/etOrderDetail"
             style="@style/RetroInput"
             android:gravity="top|start"
-            android:hint="Patokan atau detail lengkap"
+            android:hint="Landmark (e.g., Green gate)"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:minLines="3" />
@@ -79,8 +76,8 @@
             android:id="@+id/btnOrder"
             style="@style/RetroButton"
             android:layout_marginTop="32dp"
-            android:background="@drawable/bg_btn_merah"
-            android:text="Order dan Kirim"
-            android:textColor="@color/white" />
+            android:background="@drawable/bg_btn_biru"
+            android:text="Order &amp; Deliver Now"
+            android:textColor="@color/retro_cream" />
     </LinearLayout>
 </ScrollView>

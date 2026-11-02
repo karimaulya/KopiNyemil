@@ -2,46 +2,58 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/retro_pink"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:clipToPadding="false">
 
-        <TextView
-            android:id="@+id/tvChip"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imgKopi"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_box_pink"
-            android:paddingStart="14dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="4dp"
-            android:text="🍩 New member"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:layout_gravity="center"
+            android:layout_marginStart="-24dp"
+            android:layout_marginEnd="-24dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:importantForAccessibility="no"
+            android:src="@drawable/kopi_decor_hijau_rata" />
 
         <TextView
             android:id="@+id/tvRegisterTitle"
             style="@style/RetroTitle"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Register" />
+            android:text="Join the Club!" />
+
+        <TextView
+            android:id="@+id/tvRegisterDesc"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Fill in these quick details so we can get to know you and deliver your cravings faster." />
+
 
         <TextView
             android:id="@+id/tvRegisterName"
             style="@style/RetroLabel"
             android:layout_marginTop="32dp"
-            android:text="Nama Lengkap" />
+            android:text="Full Name" />
 
         <EditText
             android:id="@+id/etRegisterName"
             style="@style/RetroInput"
-            android:hint="nama lengkap"
+            android:hint="Your full name..."
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
@@ -53,7 +65,7 @@
         <EditText
             android:id="@+id/etRegisterUsername"
             style="@style/RetroInput"
-            android:hint="username"
+            android:hint="Pick a unique username..."
             android:importantForAutofill="no"
             android:inputType="text" />
 
@@ -65,7 +77,7 @@
         <EditText
             android:id="@+id/etRegisterPassword"
             style="@style/RetroInput"
-            android:hint="password"
+            android:hint="Your secret password..."
             android:importantForAutofill="no"
             android:inputType="textPassword" />
 
@@ -79,7 +91,7 @@
             style="@style/RetroButton"
             android:layout_marginTop="32dp"
             android:background="@drawable/bg_btn_hijau"
-            android:text="Register"
-            android:textColor="@color/white" />
+            android:text="Register Now"
+            android:textColor="@color/retro_cream" />
     </LinearLayout>
 </ScrollView>

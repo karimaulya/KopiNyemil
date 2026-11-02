@@ -11,15 +11,13 @@
     android:paddingEnd="17dp"
     android:paddingBottom="17dp">
 
-    <!-- Placeholder foto: emoji. Ganti dengan ImageView kalau sudah punya gambar -->
-    <TextView
-        android:id="@+id/tvMenuEmoji"
+    <ImageView
+        android:id="@+id/ivMenu"
         android:layout_width="88dp"
         android:layout_height="88dp"
-        android:background="@drawable/bg_box_kuning"
-        android:gravity="center"
-        android:text="☕"
-        android:textSize="36sp" />
+        android:contentDescription="Foto Menu"
+        android:padding="8dp"
+        android:scaleType="fitCenter" />
 
     <LinearLayout
         android:layout_width="0dp"

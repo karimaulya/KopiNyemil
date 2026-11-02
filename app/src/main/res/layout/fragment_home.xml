@@ -11,22 +11,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Halo Nama," />
+        android:text="Hi, Nama!" />
 
     <TextView
-        android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="What are you craving today?"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bg_box_kuning"
-        android:paddingStart="14dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="14dp"
-        android:paddingBottom="4dp"
-        android:text="Makanan"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <TextView
+            android:id="@+id/tvBadge1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_box_biru"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:text="Our Favorites"
+            android:textColor="@color/retro_cream"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBadge2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_box_hijau"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:text="Coffee"
+            android:textColor="@color/retro_cream"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBadge3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_box_ungu"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:text="Beverages"
+            android:textColor="@color/retro_cream"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMenu"
@@ -39,4 +83,5 @@
         android:paddingTop="4dp"
         android:paddingEnd="20dp"
         android:paddingBottom="16dp" />
+
 </LinearLayout>

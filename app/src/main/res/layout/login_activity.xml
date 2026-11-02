@@ -2,27 +2,16 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/retro_biru">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:clipToPadding="false">
 
-        <TextView
-            android:id="@+id/tvChip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_box_kuning"
-            android:paddingStart="14dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="4dp"
-            android:text="☕ Welcome back"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvLoginTitle"
@@ -30,32 +19,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Login User" />
+            android:text="Welcome Back!"
+            android:textColor="@color/retro_cream" />
+
+        <TextView
+            android:id="@+id/tvRegisterDesc"
+            android:textColor="@color/retro_cream"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Craving a coffee? Log in to your account and let's get your order ready." />
 
         <TextView
             android:id="@+id/tvUsernameTitle"
             style="@style/RetroLabel"
             android:layout_marginTop="40dp"
-            android:text="Username" />
+            android:text="Username"
+            android:textColor="@color/retro_cream"/>
 
         <EditText
             android:id="@+id/etLoginUsername"
             style="@style/RetroInput"
-            android:hint="username"
+            android:hint="Username..."
             android:importantForAutofill="no"
             android:inputType="text" />
 
         <TextView
             android:id="@+id/tvPasswordTitle"
             style="@style/RetroLabel"
-            android:text="Password" />
+            android:text="Password"
+            android:textColor="@color/retro_cream"/>
 
         <EditText
             android:id="@+id/etLoginPassword"
             style="@style/RetroInput"
-            android:hint="password"
+            android:hint="Password..."
             android:importantForAutofill="no"
             android:inputType="textPassword" />
+
+        <ImageView
+            android:id="@+id/imgKopi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="-24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="-24dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:importantForAccessibility="no"
+            android:src="@drawable/kopi_decor_kuning_rata" />
 
         <Space
             android:layout_width="match_parent"
@@ -66,8 +80,8 @@
             android:id="@+id/btnLoginSubmit"
             style="@style/RetroButton"
             android:layout_marginTop="32dp"
-            android:background="@drawable/bg_btn_ungu"
-            android:text="Login"
-            android:textColor="@color/white" />
+            android:background="@drawable/bg_btn_kuning"
+            android:text="Log In"
+            android:textColor="@color/black" />
     </LinearLayout>
 </ScrollView>

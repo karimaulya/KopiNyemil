@@ -3,15 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
-
-    <TextView
-        android:id="@+id/tvConfirmGreeting"
-        style="@style/RetroTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Halo Nama," />
+    android:padding="24dp"
+    android:clipToPadding="false">
 
     <Space
         android:layout_width="match_parent"
@@ -19,31 +12,41 @@
         android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/tvOk"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bg_oval_hijau"
-        android:gravity="center"
-        android:text="OK"
-        android:textColor="@color/white"
-        android:textSize="44sp"
-        android:textStyle="bold" />
+        android:id="@+id/tvConfirmGreeting"
+        style="@style/RetroTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Order Received!" />
 
     <TextView
         android:id="@+id/tvConfirmMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/bg_card_kuning"
         android:gravity="center"
         android:paddingStart="20dp"
         android:paddingTop="20dp"
         android:paddingEnd="25dp"
         android:paddingBottom="25dp"
-        android:text="Terima kasih sudah memesan, tunggu aja sebentar kurir kami segera mengantarkan pesananmu!"
+        android:text="Thanks for ordering at Kopé dan Nyemil. Sit back and relax, your treats are being prepared and will be on their way to you soon!"
         android:textColor="@color/black"
         android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imgKopi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="-24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="-24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:importantForAccessibility="no"
+        android:src="@drawable/kopi_decor_hijau_rata" />
 
     <Space
         android:layout_width="match_parent"
@@ -55,6 +58,6 @@
         style="@style/RetroButton"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_btn_ungu"
-        android:text="Oke"
+        android:text="Awesome!"
         android:textColor="@color/white" />
 </LinearLayout>

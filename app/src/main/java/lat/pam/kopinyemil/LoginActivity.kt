@@ -18,18 +18,18 @@ class LoginActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnLoginSubmit).setOnClickListener {
             val username = etUsername.text.toString().trim()
-            val password = etPassword.text.toString()
+            val password = etPassword.text.toString().trim()
 
             when {
                 username.isEmpty() || password.isEmpty() ->
                     toast("Username dan password wajib diisi")
-                !session.hasAccount() ->
-                    toast("Belum ada akun, silakan register dulu")
                 session.login(username, password) -> {
                     val intent = Intent(this, HomeActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
+                !session.hasAccount() ->
+                    toast("Belum ada akun. Silakan register dulu atau gunakan admin / 123456")
                 else -> toast("Username atau password salah")
             }
         }

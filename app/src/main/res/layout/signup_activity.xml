@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@color/retro_hijau">
+    android:background="@color/retro_hijau"
+    android:clipToPadding="false"
+    >
 
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/imgFries"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@drawable/bg_card_pink"
-        android:layout_marginTop="16dp"
-        >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="-24dp"
+        android:layout_marginEnd="-24dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:importantForAccessibility="no"
+        android:src="@drawable/fries_decor_kuning_rata" />
 
-        <ImageView
-            android:layout_width="320dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center"
-            android:src="@drawable/kopi1"
-            android:scaleType="centerCrop"
-            android:layout_margin="12dp" />
-
-
-
-    </FrameLayout>
 
     <TextView
         android:id="@+id/tvTitle"
         style="@style/RetroTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:textColor="@color/retro_cream"
         android:text="Sign Up" />
+
 
     <TextView
         android:id="@+id/tvDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Join as a member &amp; experience more fun from various meal at mesen_gube marketing app"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:text="Ready for some tasty treats today? Join us as a member to make ordering your daily coffee and snacks a breeze!"
+        android:textColor="@color/retro_cream"
         android:textSize="16sp" />
 
     <Space
@@ -54,8 +52,8 @@
         android:id="@+id/btnRegister"
         style="@style/RetroButton"
         android:background="@drawable/bg_btn_biru"
-        android:text="Register"
-        android:textColor="@color/white" />
+        android:text="Create New Account"
+        android:textColor="@color/retro_cream" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -63,5 +61,5 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_btn_cream"
-        android:text="Login" />
+        android:text="Already a Member" />
 </LinearLayout>
