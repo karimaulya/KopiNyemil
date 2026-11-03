@@ -1,35 +1,175 @@
 # ☕ Kopi dan Nyemil
 
-Aplikasi mobile Android untuk memesan kopi dan camilan, dibuat sebagai **Tugas UTS Pemrograman Mobile**. Tampilan mengusung tema **retro pop** dengan warna-warni kontras, border tebal, dan sudut membulat pada setiap tombol, input, dan kartu.
+Aplikasi mobile Android untuk memesan kopi dan camilan, dibuat sebagai **Tugas UTS Pemrograman Mobile**. Tampilan mengusung tema **retro pop**: warna-warni kontras, border hitam tebal, bayangan keras, dan ilustrasi dekoratif di setiap halaman.
 
 > *Get a taste of your wish.*
 
+## 📑 Daftar Isi
+
+1. [Fitur](#-fitur)
+2. [Panduan Penggunaan (per Halaman)](#-panduan-penggunaan-per-halaman)
+3. [Alur Aplikasi](#️-alur-aplikasi)
+4. [Teknologi](#️-teknologi--spesifikasi)
+5. [Palette Warna](#-palette-warna-retro)
+6. [Struktur Project](#-struktur-project)
+7. [Data Menu Dummy](#-data-menu-dummy-10-item)
+8. [Cara Menjalankan](#️-cara-menjalankan)
+9. [Pembuat](#-pembuat)
+
 ---
 
-## 📱 Screenshot
+## ✨ Fitur
 
-| Splash | Sign Up | Login | Register |
-|:---:|:---:|:---:|:---:|
-| ![Splash](screenshots/01_splash.png) | ![Sign Up](screenshots/02_signup.png) | ![Login](screenshots/03_login.png) | ![Register](screenshots/04_register.png) |
+**Akun & Autentikasi**
+- **Splash / Welcome**: halaman pembuka dengan logo dan hiasan ombak retro.
+- **Sign Up**: pintu masuk dengan pilihan *Create New Account* atau *Already a Member*.
+- **Register**: membuat akun dengan nama lengkap, username, dan password; semua kolom wajib diisi. Akun yang tersimpan hanya satu, jadi mendaftar lagi akan menimpa akun sebelumnya.
+- **Login**: autentikasi username dan password. Username tidak membedakan huruf besar/kecil, password membedakan; spasi di tepi otomatis dibuang. Tersedia akun demo `admin` / `123456` yang berlaku selama belum ada akun yang didaftarkan.
+- **Logout**: keluar dari akun dan kembali ke Sign Up; tombol Back tidak bisa kembali ke halaman sebelumnya.
 
-| Home | Profile | Alamat (Order) | Konfirmasi |
-|:---:|:---:|:---:|:---:|
-| ![Home](screenshots/05_home.png) | ![Profile](screenshots/06_profile.png) | ![Order](screenshots/07_order.png) | ![Konfirmasi](screenshots/08_konfirmasi.png) |
+**Pemesanan**
+- **Daftar menu** (10 item) memakai `RecyclerView`, lengkap dengan foto, deskripsi, dan harga.
+- **Pengatur jumlah (+ / −)** di setiap menu untuk memilih berapa porsi yang dipesan.
+- **Keranjang melayang**: muncul otomatis saat ada menu yang dipilih, menampilkan jumlah item, dan bila diketuk langsung membuka tab Order.
+- **Ringkasan pesanan**: halaman Order menampilkan daftar menu terpilih beserta **total harga**.
+- **Alamat pengiriman**: nama penerima, alamat lengkap, dan patokan.
+- **Validasi pesanan**: order ditolak jika keranjang kosong atau data pengiriman belum lengkap.
+- **Konfirmasi pesanan**: halaman sukses setelah order dikirim; keranjang otomatis dikosongkan.
+
+**Profil & Navigasi**
+- **Profile**: ubah *Full Name* dan *Username*, simpan dengan *Save Changes*; nama baru langsung dipakai di sapaan Home dan isian otomatis form Order.
+- **Bottom Navigation** (Home, Order, Profile) berbasis **Fragment** di dalam `HomeActivity`.
+
+**Tampilan**
+- Tema retro: border 2dp, bayangan keras, tombol yang "menekan" saat disentuh.
+- Setiap halaman punya warna latar sendiri dan ilustrasi dekorasi (kopi, kentang goreng, ombak).
 
 ---
 
-## ✨ Fitur Utama
+## 📱 Panduan Penggunaan (per Halaman)
 
-- **Splash / Welcome Screen**: Halaman pembuka dengan logo *Kopi dan Nyemil* serta tombol *Let's Get Started*.
-- **Sign Up**: Halaman sambutan awal dengan dekorasi banner retro & pilihan navigasi (*Create New Account* atau *Already a Member*).
-- **Register**: Membuat akun baru dengan mengisikan nama lengkap, username, dan password.
-- **Login**: Autentikasi pengguna menggunakan username & password (mendukung pencarian *case-insensitive*, penanganan spasi otomatis, serta *fallback* akun demo `admin` / `123456`).
-- **Home**: Menampilkan sapaan personal *"Halo {nama},"*, teks kutipan, badge kategori retro, dan daftar 10 menu kopi & makanan menggunakan `RecyclerView` & `MenuAdapter`.
-- **Profile**: Menampilkan avatar profil di tengah, badge username, serta form pengaturan untuk mengubah **Full Name** dan **Username** secara langsung, tombol *Save Changes*, dan *Logout*.
-- **Order (Alamat Pengiriman)**: Form isi alamat pengiriman (*Where to?*) yang meliputi Nama Penerima, Alamat Lengkap, dan Landmark/Patokan.
-- **Konfirmasi Pesanan**: Halaman pesan sukses *"Order Received!"*, detail ucapan terima kasih, dekorasi visual retro, dan tombol *Awesome!* untuk kembali ke Home.
-- **Bottom Navigation**: Navigasi bawah kustom (Home, Order, Profile) berbasis **Fragment** di dalam `HomeActivity`.
-- **Tema Retro Pop**: Palette warna cerah, border tebal, sudut *rounded*, serta responsif di berbagai ukuran layar device.
+> Simpan semua screenshot di folder `screenshots/` dengan nama seperti pada tabel.
+
+### 1. Splash / Welcome
+
+![Splash](screenshots/01_splash.jpeg)
+
+Halaman pertama yang muncul saat aplikasi dibuka, berisi logo **Kopi dan Nyemil**.
+
+**Cara pakai:**
+1. Lihat logo dan tagline aplikasi.
+2. Ketuk tombol **Let's Get Started** untuk lanjut ke halaman Sign Up.
+3. Halaman ini hanya tampil sekali. Setelah pindah ke Sign Up, tombol Back pada HP akan menutup aplikasi, bukan kembali ke Splash.
+
+---
+
+### 2. Sign Up
+
+![Sign Up](screenshots/02_signup.jpeg)
+
+Pintu masuk untuk menentukan apakah kamu pengguna baru atau sudah punya akun.
+
+**Cara pakai:**
+1. Jika **belum punya akun**, ketuk **Create New Account** untuk menuju halaman Register.
+2. Jika **sudah punya akun**, ketuk **Already a Member** untuk menuju halaman Login.
+
+---
+
+### 3. Register
+
+![Register](screenshots/04_register.jpeg)
+
+Halaman untuk membuat akun baru.
+
+**Cara pakai:**
+1. Isi **Full Name** dengan nama lengkapmu.
+2. Isi **Username** (pilih yang unik, dipakai untuk login).
+3. Isi **Password**.
+4. Ketuk **Register Now**.
+5. Jika ada kolom yang kosong, muncul pesan *Semua data wajib diisi* dan akun tidak dibuat. Jika semua terisi, muncul pesan *Registrasi berhasil* dan kamu langsung masuk ke Home.
+
+---
+
+### 4. Login
+
+![Login](screenshots/03_login.jpeg)
+
+Halaman masuk untuk pengguna yang sudah punya akun.
+
+**Cara pakai:**
+1. Isi **Username** dan **Password** akun yang sudah didaftarkan.
+2. Ketuk **Log In**.
+3. Jika benar, kamu masuk ke Home. Jika salah, muncul pesan *Username atau password salah*. Kolom yang kosong juga memunculkan peringatan.
+4. Username tidak membedakan huruf besar/kecil (`Budi` sama dengan `budi`), tetapi password membedakan.
+5. Untuk mencoba cepat, pakai akun demo: username `admin`, password `123456`. Akun demo hanya bisa dipakai kalau **belum ada akun yang didaftarkan** di perangkat; jika sudah pernah Register, login dengan akun tersebut.
+
+---
+
+### 5. Home (Daftar Menu)
+
+![Home](screenshots/05_home.jpeg)
+
+Halaman utama berisi sapaan dengan namamu dan daftar menu kopi serta camilan.
+
+**Cara pakai:**
+1. Lihat sapaan *Hi, {nama}* di bagian atas, lalu geser (scroll) untuk melihat seluruh menu beserta foto, deskripsi, dan harganya.
+2. Ketuk tombol **+** pada menu yang kamu inginkan untuk menambah jumlah porsi. Ketuk **−** untuk menguranginya (jumlah tidak bisa kurang dari 0).
+3. Angka di antara tombol menunjukkan jumlah porsi yang sedang dipilih.
+4. Gunakan bar navigasi di bawah (**Home**, **Order**, **Profile**) untuk berpindah halaman.
+
+#### Memilih beberapa menu
+
+![Home dengan keranjang](screenshots/09_home_cart.jpeg)
+
+Setelah ada menu yang dipilih, **tombol keranjang** muncul di pojok kanan bawah dan menampilkan jumlah item (misalnya *2 Items*).
+
+**Cara pakai:**
+1. Tambahkan menu sebanyak yang kamu mau dengan tombol **+**.
+2. Pantau jumlah total porsi lewat tombol keranjang di pojok kanan bawah. Tombol ini hilang lagi kalau semua jumlah kembali 0.
+3. Setelah selesai memilih, ketuk tombol keranjang tersebut, atau tab **Order** di bawah, untuk melanjutkan pesanan.
+
+---
+
+### 6. Order (Alamat Pengiriman)
+
+![Order](screenshots/07_order.jpeg)
+
+Halaman untuk memeriksa pesanan dan mengisi alamat pengiriman.
+
+**Cara pakai:**
+1. Periksa kartu **Selected Items**: di sini terlihat daftar menu yang kamu pilih (contoh: `2x Iced Americano`) dan **Total** harganya. Jika masih kosong, kembali ke Home dan pilih menu dulu.
+2. Periksa **Full Name**. Kolom ini sudah terisi otomatis dengan nama akunmu, dan boleh diganti jika pesanan untuk orang lain.
+3. Isi **Address** dengan alamat lengkap (jalan dan nomor rumah).
+4. Isi **Landmark** dengan patokan, misalnya "Pagar hijau dekat warung".
+5. Ketuk **Order & Deliver Now**.
+6. Jika keranjang masih kosong, muncul pesan *Pilih setidaknya 1 menu terlebih dahulu!*. Jika ada kolom yang kosong, muncul pesan *Lengkapi semua data pengiriman*. Jika semua benar, pesanan terkirim dan kamu diarahkan ke halaman konfirmasi.
+
+---
+
+### 7. Konfirmasi Pesanan
+
+![Konfirmasi](screenshots/08_konfirmasi.jpeg)
+
+Halaman yang menandakan pesananmu sudah diterima.
+
+**Cara pakai:**
+1. Baca pesan **Halo {nama}, Order Received!** yang menandakan pesanan sedang disiapkan.
+2. Ketuk **Awesome!** untuk kembali ke Home. Keranjang sudah kosong, jadi kamu bisa langsung memesan lagi.
+3. Tombol Back pada HP tidak membawamu kembali ke form pesanan yang lama.
+
+---
+
+### 8. Profile
+
+![Profile](screenshots/06_profile.jpeg)
+
+Halaman untuk melihat dan mengubah data akunmu.
+
+**Cara pakai:**
+1. Lihat avatar dan lencana username kamu di bagian atas.
+2. Ubah **Full Name** dan/atau **Username** pada kolom yang tersedia. Keduanya tidak boleh kosong.
+3. Ketuk **Save Changes** untuk menyimpan. Muncul pesan *Profile berhasil disimpan* dan lencana username langsung berubah. Sapaan di Home dan isian otomatis di Order akan memakai nama barumu saat halamannya dibuka kembali. Password tidak berubah.
+4. Ketuk **Logout** untuk keluar dari akun dan kembali ke halaman Sign Up. Tombol Back tidak akan membawamu kembali ke Home.
 
 ---
 
@@ -38,9 +178,10 @@ Aplikasi mobile Android untuk memesan kopi dan camilan, dibuat sebagai **Tugas U
 ```
 Splash → Sign Up ─┬→ Register ─┐
                   └→ Login ────┴→ HomeActivity (Fragment Host)
-                                    ├── HomeFragment (Daftar Menu)
-                                    ├── OrderFragment (Alamat) ──> ConfirmationActivity ──> HomeActivity
-                                    └── ProfileFragment (Update Profile / Logout ──> SignUpActivity)
+                                    ├── HomeFragment    (Daftar Menu + pilih jumlah + keranjang melayang ──┐)
+                                    ├── OrderFragment   (Ringkasan + Alamat) ◄─────────────────────────────┘
+                                    │        └→ ConfirmationActivity → HomeActivity (keranjang dikosongkan)
+                                    └── ProfileFragment (Ubah data / Logout → SignUpActivity)
 ```
 
 ---
@@ -53,25 +194,27 @@ Splash → Sign Up ─┬→ Register ─┐
 | Minimum SDK | API 27 (Android 8.1) |
 | Target SDK | API 37 |
 | IDE | Android Studio |
-| Architecture / Design | Single-Activity Fragment Container + Multi-Activity Flow |
-| UI Components | XML Layouts, Material Components (`Theme.KopiNyemil`) |
-| List & Adapters | `RecyclerView` + `MenuAdapter` (`fitCenter` Image Ratio) |
-| Management Sesi | `SessionManager` via `SharedPreferences` (`kopi_nyemil_prefs`) |
-| Custom Styling | Drawable XML (`shape`, `layer-list`, `selector`) retro border |
+| Arsitektur UI | Multi-Activity + Fragment (`HomeActivity` sebagai host 3 fragment) |
+| UI Components | XML Layout, Material Components (`Theme.KopiNyemil`) |
+| Daftar menu | `RecyclerView` + `MenuAdapter` |
+| Keranjang | `CartManager` (object/singleton yang menyimpan jumlah per menu di memori, dipakai bersama oleh Home dan Order; total harga dihitung otomatis dan diformat rupiah) |
+| Manajemen sesi | `SessionManager` via `SharedPreferences` (`kopi_nyemil_prefs`) |
+| Styling retro | Drawable XML (`shape`, `layer-list`, `selector`) untuk border dan bayangan |
+| Aset gambar | WebP / JPG / Vector untuk ilustrasi dan foto menu |
 
 ---
 
 ## 🎨 Palette Warna Retro
 
-| Warna | Hex | Penggunaan Utama |
+| Warna | Hex | Dipakai di |
 |---|---|---|
-| Kuning | `#FFC567` | Background Home & Tombol |
-| Pink | `#FB7DA8` | Background Register & Badge |
-| Merah | `#FD5A46` | Akses Badge & Tombol |
-| Ungu | `#552CB7` | Background Profile & Tombol |
-| Hijau | `#00995E` | Background Sign Up & Badge |
-| Biru | `#058CD7` | Background Login & Tombol |
-| Cream | `#FFF4DC` | Background Utama & Teks Kontras |
+| Kuning | `#FFC567` | Home, Konfirmasi, tombol Save |
+| Pink | `#FB7DA8` | Register, Order, tombol keranjang |
+| Merah | `#FD5A46` | Tombol kurangi (−) |
+| Ungu | `#552CB7` | Profile, tombol Start, harga |
+| Hijau | `#00995E` | Sign Up, tombol Register, tombol tambah (+) |
+| Biru | `#058CD7` | Login, tombol Create Account & Order |
+| Cream | `#FFF4DC` | Splash, kartu, dan teks di atas warna gelap |
 
 ---
 
@@ -80,29 +223,30 @@ Splash → Sign Up ─┬→ Register ─┐
 ```
 app/src/main/
 ├── java/lat/pam/kopinyemil/
-│   ├── SplashActivity.kt        # Halaman pembuka / Splash
-│   ├── SignUpActivity.kt        # Halaman landas login/register
-│   ├── LoginActivity.kt         # Halaman autentikasi login
-│   ├── RegisterActivity.kt      # Halaman pendaftaran akun
-│   ├── HomeActivity.kt          # Host Fragment + Bottom Navigation Bar
-│   ├── HomeFragment.kt          # Tab utama (Daftar menu)
-│   ├── OrderFragment.kt         # Tab pengiriman / alamat
-│   ├── ProfileFragment.kt       # Tab profil & update username/nama
-│   ├── ConfirmationActivity.kt  # Halaman konfirmasi order
-│   ├── FoodMenu.kt              # Data model & dummy list menu (10 items)
-│   ├── MenuAdapter.kt           # Adapter RecyclerView untuk daftar menu
-│   └── SessionManager.kt        # Manajemen sesi & penyimpanan akun
+│   ├── SplashActivity.kt        # Halaman pembuka
+│   ├── SignUpActivity.kt        # Pilihan Register / Login
+│   ├── LoginActivity.kt         # Autentikasi
+│   ├── RegisterActivity.kt      # Pendaftaran akun
+│   ├── HomeActivity.kt          # Host fragment + bottom navigation
+│   ├── HomeFragment.kt          # Daftar menu + keranjang melayang
+│   ├── OrderFragment.kt         # Ringkasan pesanan + alamat
+│   ├── ProfileFragment.kt       # Ubah data akun + logout
+│   ├── ConfirmationActivity.kt  # Konfirmasi pesanan
+│   ├── FoodMenu.kt              # Model dan data menu dummy
+│   ├── MenuAdapter.kt           # Adapter RecyclerView (termasuk tombol + / −)
+│   ├── CartManager.kt           # Penyimpan isi keranjang
+│   └── SessionManager.kt        # Penyimpan akun
 └── res/
-    ├── layout/                  # XML Layouts (*_activity.xml, fragment_*.xml, item_menu.xml)
-    ├── drawable/                # Asset gambar menu, logo, dekorasi, & bg_btn_*, bg_card_*
+    ├── layout/                  # *_activity.xml, fragment_*.xml, item_menu.xml
+    ├── drawable/                # foto menu, logo, dekorasi, bg_btn_*, bg_card_*, bg_box_*, bg_qty_*
     └── values/                  # colors.xml, themes.xml, strings.xml
 ```
 
 ---
 
-## 🧪 Data Menu Dummy (10 Items)
+## 🧪 Data Menu Dummy (10 Item)
 
-Aplikasi menyimpan data akun di `SharedPreferences`. Daftar menu dikelola secara statis melalui `FoodMenu.kt`:
+Tidak memakai database. Daftar menu bersifat statis di `FoodMenu.kt`, akun disimpan di `SharedPreferences`, dan isi keranjang disimpan sementara di memori (hilang saat aplikasi ditutup, dan dikosongkan setelah order berhasil).
 
 | Menu | Deskripsi | Harga |
 |---|---|---|
@@ -121,16 +265,24 @@ Aplikasi menyimpan data akun di `SharedPreferences`. Daftar menu dikelola secara
 
 ## ▶️ Cara Menjalankan
 
-1. Buka folder project di **Android Studio**.
-2. Tunggu proses **Gradle Sync** hingga selesai.
+1. Clone repository:
+   ```bash
+   git clone https://github.com/<username>/<nama-repo>.git
+   ```
+2. Buka folder project di **Android Studio**, lalu tunggu **Gradle Sync** selesai.
 3. Hubungkan perangkat Android (aktifkan USB Debugging) atau gunakan **Android Emulator**.
-4. Klik tombol **Run ▶️** (atau jalankan `app:assembleDebug`).
+4. Klik **Run ▶️**.
 
-**Akun Pengujian (Demo):**
-- Anda dapat membuat akun baru via **Create New Account**.
-- Atau langsung login menggunakan akun demo bawaan:
-  - **Username**: `admin`
-  - **Password**: `123456`
+**Akun untuk mencoba:**
+- Buat akun baru lewat **Create New Account**, atau
+- Langsung login dengan akun demo: username `admin`, password `123456` (hanya jika belum ada akun yang didaftarkan; kalau sudah, pakai akun tersebut atau hapus data aplikasi lewat Settings).
+
+**Skenario uji cepat:**
+1. Login dengan akun demo (atau akun yang kamu daftarkan).
+2. Di Home, tambahkan 2-3 menu dengan tombol **+**.
+3. Buka tab **Order**, cek ringkasan dan total, isi alamat, ketuk **Order & Deliver Now**.
+4. Pada halaman konfirmasi, ketuk **Awesome!**.
+5. Buka tab **Profile**, ubah nama, ketuk **Save Changes**, lalu **Logout**.
 
 ---
 
