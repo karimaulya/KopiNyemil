@@ -5,6 +5,6 @@
         <shape android:shape="rectangle"><solid android:color="@color/black"/></shape>
     </item>
     <item android:top="2dp">
-        <shape android:shape="rectangle"><solid android:color="@color/retro_cream"/></shape>
+        <shape android:shape="rectangle"><solid android:color="@color/white"/></shape>
     </item>
 </layer-list>

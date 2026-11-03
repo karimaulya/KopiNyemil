@@ -20,12 +20,14 @@
             android:layout_marginTop="32dp"
             android:text="Your Profile" />
 
+
         <TextView
             android:id="@+id/tvProfileDesc"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Keep your details updated so your orders always reach the right person."
             android:textColor="@color/retro_cream"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
 

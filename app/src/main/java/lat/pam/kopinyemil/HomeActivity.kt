@@ -39,6 +39,10 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    fun openOrderTab() {
+        showFragment(OrderFragment(), btnOrder)
+    }
+
     private fun showFragment(fragment: Fragment, activeButton: View) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
@@ -49,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setActiveTab(active: View) {
         listOf(btnHome, btnOrder, btnProfile).forEach { btn ->
             if (btn == active) {
-                btn.setBackgroundResource(R.drawable.bg_btn_kuning)
+                btn.setBackgroundResource(R.drawable.bg_btn_cream)
             } else {
                 btn.setBackgroundResource(R.drawable.bg_nav_off)
             }

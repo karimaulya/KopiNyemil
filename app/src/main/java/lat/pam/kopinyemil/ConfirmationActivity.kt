@@ -12,7 +12,7 @@ class ConfirmationActivity : AppCompatActivity() {
         setContentView(R.layout.confirmation_activity)
 
         val session = SessionManager(this)
-        findViewById<TextView>(R.id.tvConfirmGreeting).text = "Halo ${session.displayName()},\nOrder Received!"
+        findViewById<TextView>(R.id.tvConfirmGreeting).text = "Hi, ${session.displayName()},\nOrder Received!"
 
         findViewById<Button>(R.id.btnOke).setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)

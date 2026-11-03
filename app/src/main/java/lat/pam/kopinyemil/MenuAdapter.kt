@@ -12,7 +12,6 @@ class MenuAdapter(
     private val onItemClick: (FoodMenu) -> Unit
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
-    // warna kotak foto bergantian ala retro
     private val boxBackgrounds = intArrayOf(
         R.drawable.bg_box_kuning,
         R.drawable.bg_box_pink,
@@ -26,6 +25,9 @@ class MenuAdapter(
         val name: TextView = view.findViewById(R.id.tvMenuName)
         val desc: TextView = view.findViewById(R.id.tvMenuDesc)
         val price: TextView = view.findViewById(R.id.tvMenuPrice)
+        val btnMinus: TextView = view.findViewById(R.id.btnMinus)
+        val tvQuantity: TextView = view.findViewById(R.id.tvQty)
+        val btnPlus: TextView = view.findViewById(R.id.btnPlus)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -41,7 +43,26 @@ class MenuAdapter(
         holder.name.text = item.name
         holder.desc.text = item.description
         holder.price.text = item.price
-        holder.itemView.setOnClickListener { onItemClick(item) }
+
+        val qty = CartManager.getQuantity(item)
+        holder.tvQuantity.text = qty.toString()
+
+        holder.btnPlus.setOnClickListener {
+            CartManager.addItem(item)
+            notifyItemChanged(position)
+        }
+
+        holder.btnMinus.setOnClickListener {
+            if (CartManager.getQuantity(item) > 0) {
+                CartManager.removeItem(item)
+                notifyItemChanged(position)
+            }
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(item)
+            notifyItemChanged(holder.bindingAdapterPosition)
+        }
     }
 
     override fun getItemCount(): Int = items.size

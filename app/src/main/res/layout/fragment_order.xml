@@ -17,7 +17,7 @@
             style="@style/RetroTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:text="Where to?" />
 
         <TextView
@@ -26,8 +26,52 @@
             android:layout_height="wrap_content"
             android:text="Write down your exact address so our delivery rider won't get lost bringing your coffee."
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Order Items Preview Card -->
+        <LinearLayout
+            android:id="@+id/cardOrderPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_card_cream"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Items"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOrderItemsPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Belum ada menu yang dipilih"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/tvOrderTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: Rp0"
+                android:textColor="@color/retro_ungu"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             style="@style/RetroLabel"
@@ -72,7 +116,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btnOrder"
             style="@style/RetroButton"
             android:layout_marginTop="32dp"
