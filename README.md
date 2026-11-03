@@ -52,7 +52,7 @@ Aplikasi mobile Android untuk memesan kopi dan camilan, dibuat sebagai **Tugas U
 
 ### 1. Splash / Welcome
 
-![Splash](screenshots/01_splash.jpeg)
+<img src="screenshots/01_splash.jpeg" alt="Splash" width="250">
 
 Halaman pertama yang muncul saat aplikasi dibuka, berisi logo **Kopi dan Nyemil**.
 
@@ -65,7 +65,7 @@ Halaman pertama yang muncul saat aplikasi dibuka, berisi logo **Kopi dan Nyemil*
 
 ### 2. Sign Up
 
-![Sign Up](screenshots/02_signup.jpeg)
+<img src="screenshots/02_signup.jpeg" alt="Sign Up" width="250">
 
 Pintu masuk untuk menentukan apakah kamu pengguna baru atau sudah punya akun.
 
@@ -77,7 +77,7 @@ Pintu masuk untuk menentukan apakah kamu pengguna baru atau sudah punya akun.
 
 ### 3. Register
 
-![Register](screenshots/04_register.jpeg)
+<img src="screenshots/04_register.jpeg" alt="Register" width="250">
 
 Halaman untuk membuat akun baru.
 
@@ -92,7 +92,7 @@ Halaman untuk membuat akun baru.
 
 ### 4. Login
 
-![Login](screenshots/03_login.jpeg)
+<img src="screenshots/03_login.jpeg" alt="Login" width="250">
 
 Halaman masuk untuk pengguna yang sudah punya akun.
 
@@ -107,7 +107,7 @@ Halaman masuk untuk pengguna yang sudah punya akun.
 
 ### 5. Home (Daftar Menu)
 
-![Home](screenshots/05_home.jpeg)
+<img src="screenshots/05_home.jpeg" alt="Home" width="250">
 
 Halaman utama berisi sapaan dengan namamu dan daftar menu kopi serta camilan.
 
@@ -119,7 +119,7 @@ Halaman utama berisi sapaan dengan namamu dan daftar menu kopi serta camilan.
 
 #### Memilih beberapa menu
 
-![Home dengan keranjang](screenshots/09_home_cart.jpeg)
+<img src="screenshots/09_home_cart.jpeg" alt="Home dengan keranjang" width="250">
 
 Setelah ada menu yang dipilih, **tombol keranjang** muncul di pojok kanan bawah dan menampilkan jumlah item (misalnya *2 Items*).
 
@@ -132,7 +132,7 @@ Setelah ada menu yang dipilih, **tombol keranjang** muncul di pojok kanan bawah 
 
 ### 6. Order (Alamat Pengiriman)
 
-![Order](screenshots/07_order.jpeg)
+<img src="screenshots/07_order.jpeg" alt="Order" width="250">
 
 Halaman untuk memeriksa pesanan dan mengisi alamat pengiriman.
 
@@ -148,7 +148,7 @@ Halaman untuk memeriksa pesanan dan mengisi alamat pengiriman.
 
 ### 7. Konfirmasi Pesanan
 
-![Konfirmasi](screenshots/08_konfirmasi.jpeg)
+<img src="screenshots/08_konfirmasi.jpeg" alt="Konfirmasi" width="250">
 
 Halaman yang menandakan pesananmu sudah diterima.
 
@@ -161,7 +161,7 @@ Halaman yang menandakan pesananmu sudah diterima.
 
 ### 8. Profile
 
-![Profile](screenshots/06_profile.jpeg)
+<img src="screenshots/06_profile.jpeg" alt="Profile" width="250">
 
 Halaman untuk melihat dan mengubah data akunmu.
 
