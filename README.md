@@ -1,6 +1,10 @@
 # ☕ Kopé dan Nyemil
 > *Brew your story. Savor your snacks!*
 
+Kopé dan Nyemil adalah aplikasi pemesanan kopi dan camilan berbasis Android dengan tampilan retro pop yang ceria: warna-warna kontras, border hitam tebal, dan bayangan keras di setiap tombol dan kartu. Pengguna bisa mendaftar atau masuk ke akunnya, menjelajahi 10 menu minuman dan makanan lengkap dengan foto dan harga, memilih jumlah porsi lewat tombol tambah dan kurang, lalu melihat ringkasan pesanan beserta total harganya. Setelah mengisi alamat pengiriman, pesanan dikonfirmasi dalam satu alur yang singkat dan mudah dipahami.
+
+Aplikasi ini dibuat dengan Kotlin dan Android Studio sebagai Tugas UTS Pemrograman Mobile. Navigasi utamanya memakai Fragment (Home, Order, Profile) dan daftar menu memakai RecyclerView. Tidak memakai database: menu bersifat statis, data akun disimpan di SharedPreferences, dan keranjang dikelola di memori.
+
 ---
 
 - **Nama**: Karima Ulya Hermawan 
