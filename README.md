@@ -222,7 +222,7 @@ app/src/main/
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/<username>/<nama-repo>.git
+   git clone https://github.com/karimaulya/KopiNyemil.git
    ```
 2. Buka folder project di **Android Studio**, lalu tunggu **Gradle Sync** selesai.
 3. Hubungkan perangkat Android (aktifkan USB Debugging) atau gunakan **Android Emulator**.
